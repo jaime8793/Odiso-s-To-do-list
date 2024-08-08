@@ -1,24 +1,30 @@
+/* General Body Styles */
 body {
   margin: 0;
   font-family: "Arial", sans-serif;
-  background-color: #f4f4f4;
+  background-color: #eaeaea;
+  line-height: 1.6;
+  color: #333;
 }
 
+/* Header Styling */
 .header {
   background: linear-gradient(135deg, #4a90e2, #9013fe);
   color: white;
-  padding: 20px 0;
+  //padding: 0px 0;
   text-align: center;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease-in-out;
 }
 
 .header-title {
   margin: 0;
   font-size: 2.5em;
   font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .header-nav ul {
@@ -44,77 +50,139 @@ body {
   color: #ffd700;
 }
 
-.content {
+/* Main Content Styling */
+#content {
   padding: 20px;
-  max-width: 800px;
+  max-width: 80%;
   margin: 20px auto;
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
 }
 
-/* General Form Styles */
+/* Form Styling */
 form {
-  //max-width: 400px;
-  margin: 0 auto;
+  max-width: 80%;
+  margin: 20px auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: #f9f9f9;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Label Styles */
 label {
   display: block;
   font-weight: bold;
   margin-bottom: 8px;
+  color: #4a4a4a;
 }
 
-/* Input Styles */
-input[type="text"] {
+input[type="text"],
+input[type="date"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+  outline: none;
 }
 
 /* Submit Button Styles */
 input[type="submit"] {
   width: 100%;
-  padding: 10px;
-  background-color: #007bff;
+  padding: 12px;
+  background-color: #4a90e2;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
 }
 
-/* Submit Button Hover Effect */
 input[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #3a7bd5;
 }
-input[type="date"] {
-  width: 97%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+
+/* Styling for ToDo List Items */
+#content div {
+  background-color: #f4f4f4;
+  padding: 15px;
+  margin: 10px 0;
+  border-left: 5px solid #4a90e2;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+#content div:hover {
+  background-color: #e8e8e8;
+}
+
+#content p {
+  margin: 0;
   font-size: 16px;
   color: #333;
-  background: #fff;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-input[type="date"]::before {
-  content: attr(placeholder);
-  color: #999;
-  display: block;
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .header-title {
+    font-size: 2em;
+  }
+
+  form {
+    width: 90%;
+    padding: 15px;
+  }
+
+  input[type="submit"] {
+    font-size: 16px;
+  }
 }
 
-input[type="date"]:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+.motivation {
+  text-align: center;
+  background-color: #ff4e50; /* Vibrant red background */
+  color: #ffffff; /* White text */
+  padding: 15px 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+  max-width: 80%;
+  position: relative;
+  overflow: hidden;
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Add some flair with text shadow */
+.motivation p {
+  margin: 0;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation for the motivational message */
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
