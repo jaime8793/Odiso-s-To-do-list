@@ -1,14 +1,14 @@
-
-const contributions1 = [
-    2000, 1000, 3000, 5000, 3000, 2000, 1000, 1000, 2000, 5000,
-    1500, 1000, 5000, 2000, 1000, 20000, 10000, 300, 4000, 1000,
-    20000, 5000, 3000, 3000, 1000, 1000, 800, 1000, 1500, 1000,
-    1000, 2000, 1000, 1000, 800, 1000, 500, 1000, 10000, 4000,
-    500, 300, 1000, 500, 200, 500, 500, 5000, 500, 500,
-    800, 1000, 500, 5000, 1000
+const contributions = [
+    5000, 3000, 500, 800, 2000,
+    1000, 500, 500, 1000, 3000,
+    1000, 700, 2000, 500, 500,
+    500, 2500, 500, 1000, 500,
+    1000, 500, 1000, 500, 1000,
+    1000, 1000, 600, 500, 500,
+    500, 400, 1500, 600, 1000,
+    3000
 ];
 
-const totals = contributions1.reduce((sum, contribution) => sum + contribution, 0);
+const total = contributions.reduce((sum, amount) => sum + amount, 0);
 
-console.log(`The total sum of contributions is: ${totals}`);
-
+console.log(`The total amount of contributions is ${total} Kenyan Shillings.`);
